@@ -57,6 +57,21 @@ namespace cegesauto
                     dex--;
             Console.WriteLine("{0}. nap rendszám: {1}", adatok[dex].nap, adatok[dex].rendszam);
             //3. feladat
+            Console.WriteLine("3. feladat");
+            Console.Write("Nap: ");
+            int sussfelnap = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Forgalom a(z) {0}. napon:", sussfelnap);
+            for (dex = 0; dex < adatok.Count; dex++)
+                if (adatok[dex].nap == sussfelnap)
+                {
+                    Console.Write("{0} {1} {2} ", adatok[dex].oraperc, adatok[dex].rendszam, adatok[dex].id);
+                    if (adatok[dex].beki == 1)
+                        Console.WriteLine("be");
+                    else
+                        Console.WriteLine("ki");
+
+                }
+            //4. Feladat
 
 
         }
