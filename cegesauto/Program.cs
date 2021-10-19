@@ -52,12 +52,12 @@ namespace cegesauto
             Console.WriteLine("Beolvasott rekordok száma: {0}", adatok.Count);
             int dex = adatok.Count-1;
             //2. feladat
-            Console.WriteLine("2. feladat");
+            Console.WriteLine("2. Feladat");
             while (adatok[dex].beki != 0)
                     dex--;
             Console.WriteLine("{0}. nap rendszám: {1}", adatok[dex].nap, adatok[dex].rendszam);
             //3. feladat
-            Console.WriteLine("3. feladat");
+            Console.WriteLine("3. Feladat");
             Console.Write("Nap: ");
             int sussfelnap = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Forgalom a(z) {0}. napon:", sussfelnap);
@@ -71,7 +71,30 @@ namespace cegesauto
                         Console.WriteLine("ki");
 
                 }
-            //4. Feladat
+            //4. Feladat 
+            // Adja meg, hogy hány autó nem volt bent a hónap végén a parkolóban!
+            Console.WriteLine("4. Feladat");
+            int lopott = 0;
+            for (dex = 0; dex < adatok.Count; dex++)
+            {
+                if (adatok[dex].beki == 0)
+                    lopott++;
+                else
+                    lopott--;
+            }
+                
+            Console.WriteLine("A hónap végén {0} autót nem hoztak vissza.", lopott);
+
+
+            //5. Feladat
+            //Készítsen statisztikát, és írja ki a képernyőre mind a 10 autó esetén az ebben a hónapban
+            //megtett távolságot kilométerben! A hónap végén még kint lévő autók esetén az utolsó
+            //rögzített kilométerállással számoljon! A kiírásban az autók sorrendje tetszőleges lehet.
+            Console.WriteLine("5. Feladat");
+
+
+            //6. Feladat
+            Console.WriteLine("6. Feladat")
 
 
         }
