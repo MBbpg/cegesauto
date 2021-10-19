@@ -94,7 +94,7 @@ namespace cegesauto
 
 
             //6. Feladat
-            Console.WriteLine("6. Feladat")
+            Console.WriteLine("6. Feladat");
 
 
         }
