@@ -91,10 +91,32 @@ namespace cegesauto
             //megtett távolságot kilométerben! A hónap végén még kint lévő autók esetén az utolsó
             //rögzített kilométerállással számoljon! A kiírásban az autók sorrendje tetszőleges lehet.
             Console.WriteLine("5. Feladat");
+            int indi = 0;
+            int tav = 0;
+            string ipse;
+            for (dex=0; dex < adatok.Count; dex ++)
+            {   
 
+                for (indi = adatok.Count; indi > 0; indi --)
+                {
+                    if (adatok[dex].rendszam == adatok[indi].rendszam)
+                    {
+                        tav = adatok[indi].km - adatok[dex].km;
+                        Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+                    }
+                }
+
+            }    
+
+            Console.WriteLine("{0} {1} km");
 
             //6. Feladat
+            //Határozza meg, melyik személy volt az, aki az autó egy elvitele alatt a leghosszabb
+            //távolságot tette meg! A személy azonosítóját és a megtett kilométert a minta szerint írja a
+            //képernyőre!(Több legnagyobb érték esetén bármelyiket kiírhatja.)
             Console.WriteLine("6. Feladat");
+
+            Console.WriteLine("Leghosszabb út: {0} km, személy: {1}");
 
 
         }
