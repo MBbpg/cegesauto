@@ -95,31 +95,144 @@ namespace cegesauto
             int tav = 0;
             string ipse;
             int maxidex = 0;
-            int ex = 0;
+            int ex;
             string sanyi;
-           
-            while(adatok[ex].rendszam != "CEG300")
-
-              
 
 
+
+            ex = 0;
+            dex = adatok.Count-1;
+            while (adatok[ex].rendszam != "CEG300")
+                ex++;
+            while (adatok[dex].rendszam != "CEG300")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+            
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG301")
+                ex++;
+            while (adatok[dex].rendszam != "CEG301")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
 
             Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
-           
-       
 
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG302")
+                ex++;
+            while (adatok[dex].rendszam != "CEG302")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
 
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
 
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG303")
+                ex++;
+            while (adatok[dex].rendszam != "CEG303")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
 
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
 
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG304")
+                ex++;
+            while (adatok[dex].rendszam != "CEG304")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG305")
+                ex++;
+            while (adatok[dex].rendszam != "CEG305")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG306")
+                ex++;
+            while (adatok[dex].rendszam != "CEG306")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG307")
+                ex++;
+            while (adatok[dex].rendszam != "CEG307")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG308")
+                ex++;
+            while (adatok[dex].rendszam != "CEG308")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+
+            ex = 0;
+            dex = adatok.Count - 1;
+            while (adatok[ex].rendszam != "CEG309")
+                ex++;
+            while (adatok[dex].rendszam != "CEG309")
+                dex--;
+            tav = adatok[dex].km - adatok[ex].km;
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
 
             //6. Feladat
             //Határozza meg, melyik személy volt az, aki az autó egy elvitele alatt a leghosszabb
             //távolságot tette meg! A személy azonosítóját és a megtett kilométert a minta szerint írja a
             //képernyőre!(Több legnagyobb érték esetén bármelyiket kiírhatja.)
             Console.WriteLine("6. Feladat");
+            int maxitav = 0;
+            int aktualtav = 0;
 
-            Console.WriteLine("Leghosszabb út: {0} km, személy: {1}");
+            for (dex=0; dex<adatok.Count; dex++)
+            {
+                if (dex < adatok.Count - 1)
+                    ex = dex + 1;
+                else
+                    ex = dex;
+                while (ex < adatok.Count-1 && adatok[dex].id != adatok[ex].id)
+                {
+                    ex++;
+                }
+                if ( adatok[ex].beki == 1 && adatok[dex].id == adatok[ex].id)
+                {
+
+                aktualtav = adatok[ex].km - adatok[dex].km;
+                    if ( aktualtav > maxitav)
+                {
+
+                    maxitav = aktualtav;
+                    maxidex = ex;
+                }
+                }
+            }
+
+
+            Console.WriteLine("Leghosszabb út: {0} km, személy: {1}", maxitav, adatok[maxidex].id);
 
 
         }
