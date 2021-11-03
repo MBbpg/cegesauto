@@ -50,11 +50,11 @@ namespace cegesauto
             beolvas();
             //1. feladat
             Console.WriteLine("Beolvasott rekordok száma: {0}", adatok.Count);
-            int dex = adatok.Count-1;
+            int dex = adatok.Count - 1;
             //2. feladat
             Console.WriteLine("2. Feladat");
             while (adatok[dex].beki != 0)
-                    dex--;
+                dex--;
             Console.WriteLine("{0}. nap rendszám: {1}", adatok[dex].nap, adatok[dex].rendszam);
             //3. feladat
             Console.WriteLine("3. Feladat");
@@ -82,7 +82,7 @@ namespace cegesauto
                 else
                     lopott--;
             }
-                
+
             Console.WriteLine("A hónap végén {0} autót nem hoztak vissza.", lopott);
 
 
@@ -94,21 +94,24 @@ namespace cegesauto
             int indi = 0;
             int tav = 0;
             string ipse;
-            for (dex=0; dex < adatok.Count; dex ++)
-            {   
+            int maxidex = 0;
+            int ex = 0;
+            string sanyi;
+           
+            while(adatok[ex].rendszam != "CEG300")
 
-                for (indi = adatok.Count; indi > 0; indi --)
-                {
-                    if (adatok[dex].rendszam == adatok[indi].rendszam)
-                    {
-                        tav = adatok[indi].km - adatok[dex].km;
-                        Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
-                    }
-                }
+              
 
-            }    
 
-            Console.WriteLine("{0} {1} km");
+
+            Console.WriteLine("{0} {1} km", adatok[dex].rendszam, tav);
+           
+       
+
+
+
+
+
 
             //6. Feladat
             //Határozza meg, melyik személy volt az, aki az autó egy elvitele alatt a leghosszabb
