@@ -93,12 +93,8 @@ namespace cegesauto
             Console.WriteLine("5. Feladat");
             int indi = 0;
             int tav = 0;
-            string ipse;
             int maxidex = 0;
             int ex;
-            string sanyi;
-
-
 
             ex = 0;
             dex = adatok.Count-1;
@@ -234,6 +230,28 @@ namespace cegesauto
 
             Console.WriteLine("Leghosszabb út: {0} km, személy: {1}", maxitav, adatok[maxidex].id);
 
+            //7.Feladat
+            /*Az autók esetén egy havi menetlevelet kell készíteni! Kérjen be a felhasználótól egy
+rendszámot! Készítsen egy X_menetlevel.txt állományt, amelybe elkészíti az adott
+rendszámú autó menetlevelét! (Az X helyére az autó rendszáma kerüljön!) A fájlba
+soronként tabulátorral elválasztva a személy azonosítóját, a kivitel időpontját (nap.
+óra:perc), a kilométerszámláló állását, a visszahozatal időpontját (nap. óra:perc), és
+a kilométerszámláló állását írja a minta szerint! (A tabulátor karakter ASCII-kódja: 9.)
+             */
+            Console.Write("Az autó rendszáma: ");
+            string olvasottcucc = Console.ReadLine();
+            string fileName = olvasottcucc + ".txt";
+            StreamWriter sw = new StreamWriter(fileName);
+            for (dex=0; dex<adatok.Count; dex++)
+                if (adatok[dex].rendszam == olvasottcucc)
+                {
+                    if (adatok[dex].beki == 0)
+                        sw.Write("{0}   {1}.{2}    {3} km    ", adatok[dex].id, adatok[dex].nap, adatok[dex].oraperc, adatok[dex].km);
+                    else
+                        sw.WriteLine("{0}   {1}.{2}    {3} km    ", adatok[dex].id, adatok[dex].nap, adatok[dex].oraperc, adatok[dex].km);
+                }
+            sw.Close();
+            Console.WriteLine("Menetlevél kész.");
 
         }
     }
